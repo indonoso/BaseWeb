@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-BaseWeb::Application.config.secret_key_base = '5439a7736b261d3dc0aad8b493ac2d37eea97dceed115e6621bb8857ecc623778eae87ed790408565601bbda0f8c56b6c66d0fb77a667cf764a7036fbe85e373'
+BaseWeb::Application.config.secret_key_base = 'b4d5ca64fbf856609a914a6ddb543b7fd0b15532abd8bb9c7cb2b1205520415352b60d1116b5444893f3b2c7f8be5627dbf46b41eb015131bfef1187db506607'

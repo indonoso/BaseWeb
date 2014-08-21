@@ -1,9 +1,5 @@
 source 'https://rubygems.org'
 
-#Proyecto Base
-gem 'haml-rails'
-gem 'devise'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
@@ -30,6 +26,12 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+# Controlar autentificacion y creacion de usuarios
+gem 'devise'
+
+# Haml :D
+gem 'haml-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
