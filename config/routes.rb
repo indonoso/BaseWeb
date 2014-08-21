@@ -1,4 +1,8 @@
 BaseWeb::Application.routes.draw do
+  resources :work_hours
+
+  resources :projects
+
   devise_for :users
   resources :users
 

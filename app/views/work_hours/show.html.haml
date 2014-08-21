@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Work date:
+  = @work_hour.work_date
+%p
+  %b Quantity:
+  = @work_hour.quantity
+%p
+  %b Description:
+  = @work_hour.description
+
+= link_to 'Edit', edit_work_hour_path(@work_hour)
+\|
+= link_to 'Back', work_hours_path
