@@ -1,5 +1,6 @@
 class WorkHoursController < ApplicationController
   before_action :set_work_hour, only: [:show, :edit, :update, :destroy]
+  before_action :require_login
 
   # GET /work_hours
   # GET /work_hours.json
@@ -71,4 +72,10 @@ class WorkHoursController < ApplicationController
     def work_hour_params
       params.require(:work_hour).permit(:work_date, :quantity, :description)
     end
+  def require_login
+    unless user_signed_in?
+      flash[:error] = "You must be logged in to access this section"
+      redirect_to new_user_session_path
+    end
+  end
 end
