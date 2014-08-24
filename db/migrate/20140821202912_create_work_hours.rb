@@ -4,6 +4,8 @@ class CreateWorkHours < ActiveRecord::Migration
       t.date :work_date
       t.integer :quantity
       t.text :description
+      t.belongs_to :user
+      t.belongs_to :project
 
       t.timestamps
     end
