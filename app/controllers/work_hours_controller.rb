@@ -10,6 +10,8 @@ class WorkHoursController < ApplicationController
   # GET /work_hours/1
   # GET /work_hours/1.json
   def show
+    @project = @work_hour.project
+    @user = @work_hour.user
   end
 
   # GET /work_hours/new
@@ -25,6 +27,9 @@ class WorkHoursController < ApplicationController
   # POST /work_hours.json
   def create
     @work_hour = WorkHour.new(work_hour_params)
+    if user_signed_in?
+      @work_hour.user = current_user
+    end
 
     respond_to do |format|
       if @work_hour.save
@@ -69,6 +74,6 @@ class WorkHoursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def work_hour_params
-      params.require(:work_hour).permit(:work_date, :quantity, :description)
+      params.require(:work_hour).permit(:work_date, :quantity, :description, :project_id)
     end
 end
