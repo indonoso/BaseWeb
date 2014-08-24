@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 1.2'
 # Controlar autentificacion y creacion de usuarios
 gem 'devise'
 
+# Controlar permisos de usuarios
+gem 'cancancan', '~> 1.9'
+
 # Haml :D
 gem 'haml-rails'
 
