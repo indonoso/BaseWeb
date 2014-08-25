@@ -1,10 +1,17 @@
-%h1 Listing work_hours
+
+%br
+%h2= link_to 'Report hours', new_work_hour_path
+
+%br
+%h3 Work Hours Summary
 
 %table
   %tr
     %th Work date
     %th Quantity
     %th Description
+    %th User
+    %th Project
     %th
     %th
     %th
@@ -14,10 +21,11 @@
       %td= work_hour.work_date
       %td= work_hour.quantity
       %td= work_hour.description
-      %td= link_to 'Show', work_hour
-      %td= link_to 'Edit', edit_work_hour_path(work_hour)
-      %td= link_to 'Destroy', work_hour, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to "#{work_hour.user.name} #{work_hour.user.surname}", work_hour.user
+      %td= link_to "#{work_hour.project.name}", work_hour.project
+      %td= #link_to 'Show', work_hour
+      %td= #link_to 'Edit', edit_work_hour_path(work_hour)
+      %td= #link_to 'Destroy', work_hour, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Work hour', new_work_hour_path

@@ -6,6 +6,31 @@
 %p
   %b Surname:
   = @user.surname
+%p
+  %b Email:
+  = @user.email
+
+%h3 Worked hours
+
+%table
+  %tr
+    %th Project
+    %th Worked hours
+
+    %th
+    %th
+    %th
+
+  - @projects.each do |project|
+    %tr
+      %td= link_to "#{project.name}", project
+      %td= @user.worked_hours(project)
+  %tr
+    %td
+      %strong TOTAL
+    %td
+      = @user.worked_hours
+
 
 = link_to 'Edit', edit_user_path(@user)
 \|

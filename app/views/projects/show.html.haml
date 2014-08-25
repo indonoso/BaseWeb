@@ -10,6 +10,28 @@
   %b Client:
   = @project.client
 
+%h3 Worked hours
+
+%table
+  %tr
+    %th User
+    %th Worked hours
+
+    %th
+    %th
+    %th
+
+  - @users.each do |user|
+    %tr
+      %td= link_to "#{user.name} #{user.surname}", user
+      %td= user.worked_hours(@project)
+  %tr
+    %td
+      %strong TOTAL
+    %td
+      = @project.worked_hours
+%br
+%br
 = link_to 'Edit', edit_project_path(@project)
 \|
 = link_to 'Back', projects_path

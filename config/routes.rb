@@ -3,14 +3,13 @@ BaseWeb::Application.routes.draw do
 
   resources :projects
 
-  devise_for :users
+  devise_for :users#, :path_names => { :sign_up => "register" }
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
+  # See how all your routes lay out with "rake routes"
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'work_hours#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,5 +1,8 @@
 %h1 New work_hour
-
-= render 'form'
+- if user_signed_in?
+  = render 'form'
+- else
+  %h2 You must sign in to report hours!
+  %br
 
 = link_to 'Back', work_hours_path
