@@ -4,7 +4,7 @@ class Project < ActiveRecord::Base
 
   def worked_hours(user = nil)
     if user == nil
-      worked_hours = WorkHour.find(:all, :conditions => ['project_id', self.id])
+      worked_hours = WorkHour.find(:all, :conditions => ['project_id = ?', self.id])
     else
       worked_hours = WorkHour.find(:all, :conditions => ['user_id = ? AND project_id = ?', user.id, self.id])
     end
