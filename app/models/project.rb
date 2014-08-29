@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
   has_many :work_hours
-  has_many :users, through: :work_hours
+  has_many :users,  -> { uniq }, through: :work_hours
 
   def worked_hours(user = nil)
     if user == nil
