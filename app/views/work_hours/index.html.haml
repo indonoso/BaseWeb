@@ -26,7 +26,8 @@
       - if work_hour.project
         %td= link_to "#{work_hour.project.name}", work_hour.project
       %td= #link_to 'Show', work_hour
-      %td= #link_to 'Edit', edit_work_hour_path(work_hour)
+      -if user_signed_in? && work_hour.user == current_user
+        %td= link_to 'Edit', edit_work_hour_path(work_hour)
       %td= #link_to 'Destroy', work_hour, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
