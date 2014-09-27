@@ -24,12 +24,12 @@
   - @projects.each do |project|
     %tr
       %td= link_to "#{project.name}", project
-      %td= @user.worked_hours(project)
+      %td= format_time(@user.worked_hours(project))
   %tr
     %td
       %strong TOTAL
     %td
-      = @user.worked_hours
+      = format_time(@user.worked_hours)
 
 
 = link_to 'Edit', edit_user_path(@user)

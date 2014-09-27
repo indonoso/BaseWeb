@@ -19,7 +19,7 @@
   - @work_hours.each do |work_hour|
     %tr
       %td= work_hour.work_date
-      %td= work_hour.quantity
+      %td= format_time(work_hour.total_minutes)
       %td= work_hour.description
       - if work_hour.user
         %td= link_to "#{work_hour.user.name} #{work_hour.user.surname}", work_hour.user

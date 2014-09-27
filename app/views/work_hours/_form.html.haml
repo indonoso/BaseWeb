@@ -10,8 +10,10 @@
     = f.label :work_date
     = f.date_select :work_date
   .field
-    = f.label :quantity
-    = f.number_field :quantity
+    = f.label :hours
+    = f.number_field :quantity, min: 0, max: 12
+    = f.label :minutes
+    = f.number_field :minutes, min: 0, max: 59
   .field
     = f.label :description
     = f.text_area :description

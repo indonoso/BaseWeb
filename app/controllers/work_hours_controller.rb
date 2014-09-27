@@ -27,6 +27,7 @@ class WorkHoursController < ApplicationController
   # POST /work_hours.json
   def create
     @work_hour = WorkHour.new(work_hour_params)
+    
     if user_signed_in?
       @work_hour.user = current_user
     end
