@@ -5,7 +5,7 @@
   = @work_hour.work_date
 %p
   %b Quantity:
-  = @work_hour.quantity
+  = format_time(@work_hour.total_minutes)
 %p
   %b Description:
   = @work_hour.description

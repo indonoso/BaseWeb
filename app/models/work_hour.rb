@@ -5,8 +5,8 @@ class WorkHour < ActiveRecord::Base
 
   def total_minutes
     res = 0
-    if quantity
-      res += quantity*60
+    if hours
+      res += hours*60
     end
     if minutes
       res += minutes
