@@ -1,0 +1,25 @@
+%h1 Listing pending_works
+
+%table
+  %tr
+    %th Starting time
+    %th User
+    %th Project
+    %th Description
+    %th
+    %th
+    %th
+
+  - @pending_works.each do |pending_work|
+    %tr
+      %td= pending_work.starting_time
+      %td= pending_work.user
+      %td= pending_work.project
+      %td= pending_work.description
+      %td= link_to 'Show', pending_work
+      %td= link_to 'Edit', edit_pending_work_path(pending_work)
+      %td= link_to 'Destroy', pending_work, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Pending work', new_pending_work_path

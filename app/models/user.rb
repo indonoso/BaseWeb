@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :work_hours
   has_many :projects,  -> { uniq }, through: :work_hours
+  has_one :pending_work
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

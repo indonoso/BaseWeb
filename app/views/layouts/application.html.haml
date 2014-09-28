@@ -19,6 +19,25 @@
     %br
     - if user_signed_in? || params[:controller] == 'devise/registrations' || params[:controller] == 'devise/sessions'
       - if user_signed_in?
+        %br
+        %h2= link_to 'Report hours', new_work_hour_path
+        - @pending_work = current_user.pending_work
+        - if @pending_work
+          You are currently working in 
+          = @pending_work.project.name 
+          \. You've been working for 
+          = format_time(@pending_work.elapsed_time)
+          hours.   |
+          = link_to 'Finish', finish_pending_work_path(@pending_work)
+          |
+          = #link_to 'Edit and finish', edit_and_finish_pending_work_path(@pending_work)
+          |
+          = #link_to 'Pause', pause_pending_work_path(@pending_work)
+          | 
+          = link_to 'Cancel', @pending_work, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        - else
+          %h2
+            = link_to 'Start working', new_pending_work_path
         %h2
           = link_to "Hours", work_hours_path
           |

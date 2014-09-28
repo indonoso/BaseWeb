@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Starting time:
+  = @pending_work.starting_time
+%p
+  %b User:
+  = @pending_work.user
+%p
+  %b Project:
+  = @pending_work.project
+%p
+  %b Description:
+  = @pending_work.description
+
+= link_to 'Edit', edit_pending_work_path(@pending_work)
+\|
+= link_to 'Back', pending_works_path

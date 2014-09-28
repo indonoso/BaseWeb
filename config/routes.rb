@@ -1,4 +1,12 @@
 BaseWeb::Application.routes.draw do
+  resources :pending_works do
+    member do
+      get 'pause'
+      get 'finish'
+      get 'edit_and_finish'
+    end
+  end
+
   resources :work_hours
 
   resources :projects

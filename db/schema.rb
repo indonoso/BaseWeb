@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140821202912) do
+ActiveRecord::Schema.define(version: 20140927224819) do
+
+  create_table "pending_works", force: true do |t|
+    t.datetime "starting_time"
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.text     "description"
+    t.integer  "cumulative_minutes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pending_works", ["project_id"], name: "index_pending_works_on_project_id"
+  add_index "pending_works", ["user_id"], name: "index_pending_works_on_user_id"
 
   create_table "projects", force: true do |t|
     t.string   "name"
@@ -45,8 +58,6 @@ ActiveRecord::Schema.define(version: 20140821202912) do
     t.date     "work_date"
     t.integer  "hours"
     t.integer  "minutes"
-    t.string   "lala1"
-    t.integer  "lala2"
     t.text     "description"
     t.integer  "user_id"
     t.integer  "project_id"
